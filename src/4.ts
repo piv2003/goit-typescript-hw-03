@@ -20,7 +20,20 @@ abstract class House {
         this.key = key;
         this.door = false;
     }
+
+    comeIn(person: Person): void {
+        if (this.door) {
+            this.tenants.push(person);
+            console.log("The door is open.");
+        } else {
+            console.log("The door is closed.");
+        }
+    }
+    
+    abstract OpenDoor(key: Key): void;
 }
+
+class MyHouse extends House { }
 
 
 const key = new Key();
