@@ -12,6 +12,11 @@ class Person {
   }
 }
 
+abstract class House { 
+public door: boolean = false;
+}
+
+
 const key = new Key();
 
 const house = new MyHouse(key);
