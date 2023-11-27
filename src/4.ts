@@ -5,6 +5,13 @@ class Key {
   }
 }
 
+class Person {
+  constructor(private key: Key) {}
+  getKey(): Key {
+    return this.key;
+  }
+}
+
 const key = new Key();
 
 const house = new MyHouse(key);
