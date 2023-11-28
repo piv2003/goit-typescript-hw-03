@@ -33,17 +33,21 @@ abstract class House {
     abstract OpenDoor(key: Key): void;
 }
 
-class MyHouse extends House { }
-
+class MyHouse extends House { OpenDoor(key: Key): void {
+        if (key.getSignature() === this.key.getSignature()) {
+            this.door = true;
+            console.log("The door is open.");
+        } else {
+            console.log("The door is closed.");
+        }
+}
+}
 
 const key = new Key();
-
 const house = new MyHouse(key);
 const person = new Person(key);
 
-house.openDoor(person.getKey());
-
+house.OpenDoor(person.getKey());
 house.comeIn(person);
-
 
 export {};
